@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+/* ||RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ||VARIABLES */
+    /* Text Color */
+
+    /*(sub-heading at the top of the app UI)*/
+    --Pale-Violet: hsl(276, 100%, 81%);
+    /* (chat on the left) */
+    --Moderate-Violet: hsl(276, 55%, 52%);
+    --Moderate-Violet-bg: hsla(276, 55%, 52%, 0.089);
+    --Moderate-Violet-bg-main: hsla(276, 55%, 52%, 0.022);
+    /* (chat on the right) */
+    --Desaturated-Dark-Violet: hsl(271, 15%, 43%);
+    /* (placeholder text) */
+    --Grayish-Blue: hsl(206, 6%, 79%);
+    /* (main heading) */
+    --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+    /* (paragraph) */
+    --Dark-Grayish-Violet: hsl(270, 7%, 64%);
+
+
+    /* Gradients Color */
+
+    /* These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient: */
+    --Light-Magenta: hsl(293, 100%, 63%);
+    --Light-Violet: hsl(264, 100%, 61%);
+
+
+    /* Secondary Color */
+
+    --White: hsl(0, 0%, 100%);
+    /* (app background) */
+    --Light-Grayish-Violet: hsl(270, 20%, 96%);
+    /*(submit button background)*/
+    --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+    /*(radio button outline)*/
+    --Very-Light-Magenta: hsl(289, 100%, 72%);
+}
+
+/* ||GENERAL STYLE */
+body {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    position: relative;
+    padding: 10rem 0;
+    overflow: hidden;
+    background: var(--Light-Grayish-Violet);
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 750px;
+    background: linear-gradient(to bottom, var(--Light-Magenta), var(--Light-Violet));
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    top: 0;
+    left: -200px;
+}
+
+main::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 750px;
+    background: var(--Moderate-Violet-bg-main);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    bottom: 0;
+    right: -200px;
+}
+
+/* ||LEFT CONTENT */
+.left-content {
+    background: var(--Light-Grayish-Violet);
+    outline: .6rem solid var(--White);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    width: 260px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    position: relative;
+}
+
+.left-content::after {
+    content: "";
+    position: absolute;
+    width: 9.5rem;
+    height: 1.9rem;
+    background: var(--White);
+    border-radius: 5rem;
+    top: -.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: .3rem;
+    padding: 2.2rem .8rem .7rem;
+    background: linear-gradient(to left, var(--Light-Magenta), var(--Light-Violet));
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.profile {
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+}
+
+.arrow {
+    color: white;
+}
+
+.profile img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.name,
+.dot {
+    color: white;
+    font-size: .8rem;
+}
+
+.status {
+    font-size: .55rem;
+    color: var(--Pale-Violet);
+    line-height: 1.8;
+}
+
+.message-container {
+    padding: .8rem .5rem;
+}
+
+.chat-left {
+    font-size: .6rem;
+    max-width: 150px;
+    margin-bottom: .5rem;
+    color: var(--Moderate-Violet);
+    background: var(--Moderate-Violet-bg);
+    padding: .5rem;
+    border-radius: .8rem;
+    border-bottom-left-radius: .3rem;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 1rem 0;
+}
+
+.image-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+
+.image-container img {
+    width: 2.9rem;
+    border-radius: 1rem;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.chat-right {
+    font-size: .6rem;
+    max-width: 150px;
+    margin-top: .5rem;
+    color: var(--Desaturated-Dark-Violet);
+    background: var(--White);
+    padding: .5rem;
+    border-radius: .8rem;
+    border-bottom-right-radius: .3rem;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.pricing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, var(--Light-Magenta), var(--Light-Violet));
+    margin-top: .5rem;
+    max-width: 180px;
+    padding: .6rem .8rem .6rem 2rem;
+    border-radius: .8rem;
+    border-bottom-left-radius: .3rem;
+    font-size: .6rem;
+    color: var(--Grayish-Blue);
+    position: relative;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.pricing::before {
+    content: "";
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    border: 2px solid var(--Pale-Violet);
+    left: .8rem;
+}
+
+.pricing span {
+    font-size: .9rem;
+    color: var(--White);
+    font-weight: 700;
+}
+
+.type-message {
+    background: var(--White);
+    margin-top: 1rem;
+    padding: .8rem .2rem .6rem 1.2rem;
+    border-radius: 5rem;
+    color: var(--Grayish-Blue);
+    font-size: .6rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.type-message::after {
+    content: "";
+    position: absolute;
+    width: 1.8rem;
+    height: 1.8rem;
+    background: url("images/chevron-forward-circle.svg");
+    top: 50%;
+    transform: translateY(-50%);
+    right: .2rem;
+}
+
+/* ||RIGHT CONTENT */
+.right-content {
+    max-width: 450px;
+}
+
+.right-content h1 {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.right-content p {
+    color: var(--Dark-Grayish-Violet);
+    margin-top: 1.5rem;
+    line-height: 1.7;
+}
+
+/* ||MEDIA QUERIES */
+@media only screen and (max-width: 900px) {
+    main {
+        flex-direction: column;
+        padding: 5rem 2rem;
+        gap: 5rem;
+    }
+
+    .right-content {
+        text-align: center;
+    }
+
+    main::before {
+        top: -180px;
+        left: -400px;
+    }
+
+    main::after {
+        right: -400px;
+        bottom: -180px;
+    }
+}
